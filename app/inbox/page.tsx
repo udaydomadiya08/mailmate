@@ -1,31 +1,32 @@
-// ...existing code...
-"use client";
-import { useEffect, useState } from "react";
-// changed: use relative imports instead of '@/...'
-import EmailCard from "../../components/EmailCard";
-import { DEMO_EMAILS } from "../../lib/demoEmails";
-
-export default function InboxPage() {
-  const [emails, setEmails] = useState(DEMO_EMAILS);
-
-  // keep simple: emails already available from demo file
-  useEffect(() => {
-    // small simulated delay to look realistic
-    const t = setTimeout(() => setEmails(DEMO_EMAILS), 200);
-    return () => clearTimeout(t);
-  }, []);
-
-  return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold mb-4">📥 Demo Inbox</h1>
-      <p className="text-sm text-gray-600 mb-6">AI will summarize when you click the button.</p>
-
-      <div className="space-y-4">
-        {emails.map((e) => (
-          <EmailCard key={e.id} email={e} />
-        ))}
-      </div>
-    </div>
-  );
-}
-// ...existing code...
+const emails = [
+  {
+    id: "1",
+    from: "YouTube Team",
+    subject: "🔥 New videos just dropped for you!",
+    body: "Creators you love just uploaded new videos. Check them out now!"
+  },
+  {
+    id: "2",
+    from: "Amazon",
+    subject: "📦 Your package is on the way",
+    body: "Good news — your order has been shipped!"
+  },
+  {
+    id: "3",
+    from: "Hackathon Team",
+    subject: "⏰ Reminder: Project submission",
+    body: "Last reminder — submit your project before midnight!"
+  },
+  {
+    id: "4",
+    from: "MovieFlix",
+    subject: "🍿 A new thriller you can’t miss",
+    body: "Watch our newest mystery thriller — streaming now!"
+  },
+  {
+    id: "5",
+    from: "Security Alert",
+    subject: "🔐 New login detected",
+    body: "We noticed a new login to your account. If it wasn’t you, secure your account!"
+  }
+];
