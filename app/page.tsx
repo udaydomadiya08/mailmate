@@ -1,20 +1,19 @@
-"use client";
+// app/page.tsx
+
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-black">
-      <h1 className="text-4xl font-bold mb-6">📬 MailMate</h1>
-      <p className="text-lg text-gray-600 mb-10">
-        Your AI powered email assistant
-      </p>
-
-      <Link
-        href="/inbox"
-        className="px-6 py-3 rounded bg-blue-600 text-white hover:bg-blue-700"
-      >
-        Go to Inbox →
-      </Link>
-    </div>
+    <main className="flex items-center justify-center h-screen">
+      <div className="text-center space-y-4">
+        <h1 className="text-3xl font-bold">Welcome to MailMate ✉️</h1>
+        <Link
+          href="/inbox"
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+        >
+          Go to Inbox
+        </Link>
+      </div>
+    </main>
   );
 }
