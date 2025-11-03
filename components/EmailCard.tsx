@@ -1,3 +1,5 @@
+import React from "react";
+
 type Email = {
   id: string;
   from: string;
@@ -8,9 +10,9 @@ type Email = {
 export default function EmailCard({ email }: { email: Email }) {
   return (
     <div className="border p-4 rounded-lg shadow-sm bg-white">
-      <p className="font-semibold">{email.subject}</p>
-      <p className="text-sm text-gray-600">From: {email.from}</p>
-      <p className="mt-2 text-gray-800">{email.body}</p>
+      <p className="text-sm text-gray-600"><strong>From:</strong> {email.from}</p>
+      <h2 className="font-semibold text-lg">{email.subject}</h2>
+      <p className="text-gray-700">{email.body}</p>
     </div>
   );
 }
