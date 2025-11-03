@@ -1,41 +1,33 @@
-// app/inbox/page.tsx
+import EmailCard from "@/components/EmailCard";
 
-type Email = {
-  id: string;
-  from: string;
-  subject: string;
-  body: string;
-};
-
-const testEmails: Email[] = [
+const emails = [
   {
     id: "1",
-    from: "alice@example.com",
-    subject: "Meeting Tomorrow",
-    body: "Hey! Just checking if you're free at 11 AM tomorrow."
+    from: "elon@tesla.com",
+    subject: "Your Tesla Delivery Update",
+    body: "Congratulations! Your Model S is ready for pickup.",
   },
   {
     id: "2",
-    from: "bob@example.com",
-    subject: "Order Confirmed",
-    body: "Your order has been shipped!"
-  }
+    from: "steve@apple.com",
+    subject: "New iPhone idea",
+    body: "Hey, want to discuss a new feature for iPhone?",
+  },
+  {
+    id: "3",
+    from: "ceo@microsoft.com",
+    subject: "Partnership request",
+    body: "Let's collaborate on AI projects!",
+  },
 ];
 
 export default function InboxPage() {
   return (
     <div className="p-6">
-      <h1 className="font-semibold text-2xl mb-4">Inbox</h1>
+      <h1 className="text-2xl font-bold mb-4">Inbox</h1>
       <div className="space-y-4">
-        {testEmails.map(email => (
-          <div
-            key={email.id}
-            className="p-4 border rounded-lg bg-white hover:shadow-md transition"
-          >
-            <p className="font-medium">From: {email.from}</p>
-            <p className="text-gray-600">{email.subject}</p>
-            <p className="text-sm mt-2 text-gray-500">{email.body}</p>
-          </div>
+        {emails.map((e) => (
+          <EmailCard key={e.id} email={e} />
         ))}
       </div>
     </div>
